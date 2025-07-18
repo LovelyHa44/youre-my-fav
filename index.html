@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You 💖</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
     body {
       margin: 0;
       padding: 0;
-      background: #fff0f6;
-      font-family: 'Comic Sans MS', sans-serif;
+      background: #000000;
+      font-family: 'Patrick Hand', cursive;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      color: #fff;
     }
 
     .step {
@@ -31,21 +34,21 @@
     }
 
     .text {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
     .translation {
-      font-size: 18px;
-      color: #555;
+      font-size: 20px;
+      color: #ddd;
     }
 
     .gif {
-      width: 180px;
+      width: 200px;
       height: auto;
-      margin-top: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
     }
 
     @keyframes fadeIn {
@@ -56,19 +59,20 @@
     button {
       position: absolute;
       bottom: 30px;
-      background-color: #ff8ad8;
+      background-color: #ff99cc;
       border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 16px;
-      color: white;
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-size: 18px;
+      font-family: 'Patrick Hand', cursive;
+      color: #fff;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.3);
       transition: background-color 0.3s;
     }
 
     button:hover {
-      background-color: #ff5fcb;
+      background-color: #ff66b2;
     }
   </style>
 </head>
@@ -82,49 +86,49 @@
 
   <!-- STEP 1 -->
   <div class="step active" id="step1">
-    <div class="text">Open this, okay? 😆</div>
-    <div class="translation">Isay kholo na! 😆</div>
+    <div class="text">Open this, okay? 🥹💌</div>
+    <div class="translation">Zara kholo naaa 😝💕</div>
   </div>
 
   <!-- STEP 2 -->
   <div class="step" id="step2">
-    <div class="text">Playing a Game</div>
-    <div class="translation">Main game khel rahi hoon</div>
-    <img class="gif" src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Playing Game">
+    <div class="text">Playing a Game 🎮🩵</div>
+    <div class="translation">Main game khel rahi hoon 😄</div>
+    <img class="gif" src="https://media.giphy.com/media/MF5cUo3PqX2QPi3JYi/giphy.gif" alt="Playing Game">
   </div>
 
   <!-- STEP 3 -->
   <div class="step" id="step3">
-    <div class="text">Sitting in the Living Room</div>
-    <div class="translation">Living room mein baithi hoon</div>
-    <img class="gif" src="https://media.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.gif" alt="Music Vibe">
+    <div class="text">Sitting in the Living Room 🛋️✨</div>
+    <div class="translation">Living room mein baithi hoon 😌</div>
+    <img class="gif" src="https://media.giphy.com/media/yFQ0ywscgobJK/giphy.gif" alt="Chilling">
   </div>
 
   <!-- STEP 4 -->
   <div class="step" id="step4">
-    <div class="text">I Really Like Playing Games</div>
-    <div class="translation">Mujhe sach mein games khelna pasand hai</div>
+    <div class="text">I Really Like Playing Games 😆🕹️</div>
+    <div class="translation">Games mujhe bahut pasand hain! 😍</div>
   </div>
 
   <!-- STEP 5 -->
   <div class="step" id="step5">
-    <div class="text">But What I Like the Most…</div>
-    <div class="translation">Lekin mujhe sabse zyada kya pasand hai…</div>
+    <div class="text">But What I Like the Most… 🤭💖</div>
+    <div class="translation">Lekin sabse zyada kya pasand hai? 🤔</div>
   </div>
 
   <!-- STEP 6 -->
   <div class="step" id="step6">
-    <div class="text">Is You 😝😊💕 Ahahaha~ 🤭</div>
-    <div class="translation">Woh toh tum ho! 😝😊💕 Ahahaha~ 🤭</div>
+    <div class="text">Is You 😝💘🌸</div>
+    <div class="translation">Tum ho meri pasand sabse zyada 😚</div>
   </div>
 
   <!-- STEP 7 -->
   <div class="step" id="step7">
-    <div class="text">I Love You 😽</div>
-    <div class="translation">Main tumse pyaar karti hoon 😽</div>
+    <div class="text">I Love You 😽💞</div>
+    <div class="translation">Main tumse bohot pyaar karti hoon 💋</div>
   </div>
 
-  <button onclick="nextStep()">Next</button>
+  <button onclick="nextStep()">Next ➡️</button>
 
   <script>
     let currentStep = 1;
