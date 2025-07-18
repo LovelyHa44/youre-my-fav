@@ -1,113 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For You 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 🐻💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #000;
+      background-color: #000;
+      color: white;
       font-family: 'Patrick Hand', cursive;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       overflow: hidden;
-      color: #fff;
-    }
-    .step {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    .step.active {
-      display: flex;
-    }
-    .text {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-    .gif {
-      width: 200px;
-      margin-top: 20px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
-    }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    button {
-      position: absolute;
-      bottom: 30px;
-      background-color: #ff99cc;
-      border: none;
-      padding: 14px 30px;
-      border-radius: 40px;
-      font-size: 18px;
-      font-family: 'Patrick Hand', cursive;
-      color: #fff;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255,255,255,0.3);
-      transition: background-color 0.3s;
-    }
-    button:hover { background-color: #ff66b2; }
+    }.step {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  padding: 20px;
+}
+
+.step.active {
+  display: flex;
+}
+
+.text {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.translation {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.gif {
+  width: 200px;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.tap {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffccff;
+  animation: blink 1s infinite;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
   </style>
 </head>
 <body>
-
   <audio autoplay loop hidden>
     <source src="https://files.catbox.moe/3umfki.mp3" type="audio/mp3">
-  </audio>
-
-  <div class="step active" id="step1">
-    <div class="text">Open this, okay? 🥺💌</div>
-  </div>
-
-  <div class="step" id="step2">
-    <div class="text">Playing with my favorite friend 🐻✨</div>
-    <!-- matching white bear waving GIF -->
-    <img class="gif" src="https://media.giphy.com/media/SByI2IQ81tsYrnaYwO/giphy.gif" alt="White bear waving">
-  </div>
-
-  <div class="step" id="step3">
-    <div class="text">Feeling the love in the air 💖</div>
-    <!-- shy hearts-around bear GIF -->
-    <img class="gif" src="https://media.giphy.com/media/Ov5i2wvxtmMz2/giphy.gif" alt="Shy white bear hearts">
-  </div>
-
-  <div class="step" id="step4">
-    <div class="text">I Really Like Playing Games 😆🕹️</div>
-  </div>
-
-  <div class="step" id="step5">
-    <div class="text">But What I Like the Most… 🤭💖</div>
-  </div>
-
-  <div class="step" id="step6">
-    <div class="text">Is You 😝💘🌸</div>
-  </div>
-
-  <div class="step" id="step7">
-    <div class="text">I Love You 😽💞</div>
-  </div>
-
-  <button onclick="nextStep()">Next ➡️</button>
-
-  <script>
-    let currentStep = 1;
-    function nextStep() {
-      const curr = document.getElementById(`step${currentStep}`);
-      const nxt = document.getElementById(`step${currentStep + 1}`);
+  </audio>  <!-- STEP 1 -->  <div class="step active" id="step1">
+    <div class="text">Open this, okay? 😆</div>
+    <div class="translation">Click here to start 💗</div>
+    <div class="tap">Tap anywhere to continue 👉</div>
+  </div>  <!-- STEP 2 -->  <div class="step" id="step2">
+    <div class="text">Playing a Game</div>
+    <div class="translation">Just playing something fun~ 🎮</div>
+    <img class="gif" src="https://media.tenor.com/gp1z8YKjFPUAAAAi/milk-and-mocha-love.gif" alt="Playing Game">
+  </div>  <!-- STEP 3 -->  <div class="step" id="step3">
+    <div class="text">Sitting in the Living Room</div>
+    <div class="translation">Relaxing like a soft bean~ 🛋️</div>
+    <img class="gif" src="https://media.tenor.com/zPRZCZIuGHQAAAAi/milk-and-mocha-sweet.gif" alt="Chill Bear">
+  </div>  <!-- STEP 4 -->  <div class="step" id="step4">
+    <div class="text">I Really Like Playing Games</div>
+    <div class="translation">Gaming is my happy zone 🥰</div>
+  </div>  <!-- STEP 5 -->  <div class="step" id="step5">
+    <div class="text">But What I Like the Most…</div>
+    <div class="translation">...is something even sweeter 💕</div>
+  </div>  <!-- STEP 6 -->  <div class="step" id="step6">
+    <div class="text">Is You 😝😊💕 Ahahaha~ 🤭</div>
+    <div class="translation">Yesss it's YOU silly~ 😳💓</div>
+  </div>  <!-- STEP 7 -->  <div class="step" id="step7">
+    <div class="text">I Love You 😽</div>
+    <div class="translation">Sending all my love to you~ 💌</div>
+  </div>  <script>
+    let current = 1;
+    document.body.addEventListener('click', () => {
+      const cur = document.getElementById(`step${current}`);
+      const nxt = document.getElementById(`step${current + 1}`);
       if (nxt) {
-        curr.classList.remove('active');
+        cur.classList.remove('active');
         nxt.classList.add('active');
-        currentStep++;
+        current++;
       }
-    }
-  </script>
-</body>
+    });
+  </script></body>
 </html>
