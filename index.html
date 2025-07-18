@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-
     body {
       margin: 0;
       padding: 0;
-      background: #000000;
+      background: #000;
       font-family: 'Patrick Hand', cursive;
       display: flex;
       justify-content: center;
@@ -19,7 +18,6 @@
       overflow: hidden;
       color: #fff;
     }
-
     .step {
       display: none;
       flex-direction: column;
@@ -28,34 +26,20 @@
       padding: 20px;
       animation: fadeIn 1s ease-in-out;
     }
-
     .step.active {
       display: flex;
     }
-
     .text {
       font-size: 30px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-
-    .translation {
-      font-size: 20px;
-      color: #ddd;
-    }
-
     .gif {
       width: 200px;
-      height: auto;
       margin-top: 20px;
       border-radius: 14px;
       box-shadow: 0 4px 15px rgba(255,255,255,0.2);
     }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
     button {
       position: absolute;
       bottom: 30px;
@@ -70,62 +54,45 @@
       box-shadow: 0 4px 12px rgba(255,255,255,0.3);
       transition: background-color 0.3s;
     }
-
-    button:hover {
-      background-color: #ff66b2;
-    }
+    button:hover { background-color: #ff66b2; }
   </style>
 </head>
 <body>
 
-  <!-- 🎵 Background Music -->
   <audio autoplay loop hidden>
     <source src="https://files.catbox.moe/3umfki.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
   </audio>
 
-  <!-- STEP 1 -->
   <div class="step active" id="step1">
-    <div class="text">Open this, okay? 🥹💌</div>
-    <div class="translation">Zara kholo naaa 😝💕</div>
+    <div class="text">Open this, okay? 🥺💌</div>
   </div>
 
-  <!-- STEP 2 -->
   <div class="step" id="step2">
-    <div class="text">Playing a Game 🎮🩵</div>
-    <div class="translation">Main game khel rahi hoon 😄</div>
-    <img class="gif" src="https://media.giphy.com/media/MF5cUo3PqX2QPi3JYi/giphy.gif" alt="Playing Game">
+    <div class="text">Playing with my favorite friend 🐻✨</div>
+    <!-- matching white bear waving GIF -->
+    <img class="gif" src="https://media.giphy.com/media/SByI2IQ81tsYrnaYwO/giphy.gif" alt="White bear waving">
   </div>
 
-  <!-- STEP 3 -->
   <div class="step" id="step3">
-    <div class="text">Sitting in the Living Room 🛋️✨</div>
-    <div class="translation">Living room mein baithi hoon 😌</div>
-    <img class="gif" src="https://media.giphy.com/media/yFQ0ywscgobJK/giphy.gif" alt="Chilling">
+    <div class="text">Feeling the love in the air 💖</div>
+    <!-- shy hearts-around bear GIF -->
+    <img class="gif" src="https://media.giphy.com/media/Ov5i2wvxtmMz2/giphy.gif" alt="Shy white bear hearts">
   </div>
 
-  <!-- STEP 4 -->
   <div class="step" id="step4">
     <div class="text">I Really Like Playing Games 😆🕹️</div>
-    <div class="translation">Games mujhe bahut pasand hain! 😍</div>
   </div>
 
-  <!-- STEP 5 -->
   <div class="step" id="step5">
     <div class="text">But What I Like the Most… 🤭💖</div>
-    <div class="translation">Lekin sabse zyada kya pasand hai? 🤔</div>
   </div>
 
-  <!-- STEP 6 -->
   <div class="step" id="step6">
     <div class="text">Is You 😝💘🌸</div>
-    <div class="translation">Tum ho meri pasand sabse zyada 😚</div>
   </div>
 
-  <!-- STEP 7 -->
   <div class="step" id="step7">
     <div class="text">I Love You 😽💞</div>
-    <div class="translation">Main tumse bohot pyaar karti hoon 💋</div>
   </div>
 
   <button onclick="nextStep()">Next ➡️</button>
@@ -133,15 +100,14 @@
   <script>
     let currentStep = 1;
     function nextStep() {
-      const current = document.getElementById(`step${currentStep}`);
-      const next = document.getElementById(`step${currentStep + 1}`);
-      if (next) {
-        current.classList.remove('active');
-        next.classList.add('active');
+      const curr = document.getElementById(`step${currentStep}`);
+      const nxt = document.getElementById(`step${currentStep + 1}`);
+      if (nxt) {
+        curr.classList.remove('active');
+        nxt.classList.add('active');
         currentStep++;
       }
     }
   </script>
-
 </body>
 </html>
