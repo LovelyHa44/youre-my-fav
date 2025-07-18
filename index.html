@@ -3,67 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>I Love You 🐻</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="container">
-    <!-- Scene 1 -->
-    <div class="scene">
-      <img src="bear1.gif" alt="Bear 1">
-      <p>Open this, okay? 😆</p>
-    </div>
-
-    <!-- Scene 2 -->
-    <div class="scene">
-      <img src="bear2.gif" alt="Bear 2">
-      <p>Playing a Game</p>
-    </div>
-
-    <!-- Scene 3 -->
-    <div class="scene">
-      <img src="bear3.gif" alt="Bear 3">
-      <p>Sitting in the Living Room,</p>
-    </div>
-
-    <!-- Scene 4 -->
-    <div class="scene">
-      <img src="bear4.gif" alt="Bear 4">
-      <p>I Really Like Playing Games,</p>
-    </div>
-
-    <!-- Scene 5 -->
-    <div class="scene">
-      <img src="bear5.gif" alt="Bear 5">
-      <p>But What I Like the Most…</p>
-    </div>
-
-    <!-- Scene 6 -->
-    <div class="scene">
-      <img src="bear6.gif" alt="Bear 6">
-      <p>Is You 😝😊💕<br><span class="small">Ahahaha~ 🤭</span></p>
-    </div>
-
-    <!-- Scene 7 -->
-    <div class="scene">
-      <img src="bear7.gif" alt="Bear 7">
-      <p>I Love You 😽</p>
-    </div>
-  </div>
-
-  <script>
-    const scenes = document.querySelectorAll('.scene');
-    let index = 0;
-
-    function showNextScene() {
-      if (index < scenes.length) {
-        scenes[index].classList.add('visible');
-        index++;
-        setTimeout(showNextScene, 2500); // 2.5 seconds between scenes
-      }
+  <title>For You 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff0f6;
+      font-family: 'Comic Sans MS', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    showNextScene();
+    .step {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .step.active {
+      display: flex;
+    }
+
+    .text {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .translation {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .gif {
+      width: 180px;
+      height: auto;
+      margin-top: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    button {
+      position: absolute;
+      bottom: 30px;
+      background-color: #ff8ad8;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff5fcb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Background Music -->
+  <audio autoplay loop hidden>
+    <source src="https://files.catbox.moe/3umfki.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- STEP 1 -->
+  <div class="step active" id="step1">
+    <div class="text">Open this, okay? 😆</div>
+    <div class="translation">Isay kholo na! 😆</div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="step2">
+    <div class="text">Playing a Game</div>
+    <div class="translation">Main game khel rahi hoon</div>
+    <img class="gif" src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Playing Game">
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="step3">
+    <div class="text">Sitting in the Living Room</div>
+    <div class="translation">Living room mein baithi hoon</div>
+    <img class="gif" src="https://media.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.gif" alt="Music Vibe">
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" id="step4">
+    <div class="text">I Really Like Playing Games</div>
+    <div class="translation">Mujhe sach mein games khelna pasand hai</div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step" id="step5">
+    <div class="text">But What I Like the Most…</div>
+    <div class="translation">Lekin mujhe sabse zyada kya pasand hai…</div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step" id="step6">
+    <div class="text">Is You 😝😊💕 Ahahaha~ 🤭</div>
+    <div class="translation">Woh toh tum ho! 😝😊💕 Ahahaha~ 🤭</div>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step" id="step7">
+    <div class="text">I Love You 😽</div>
+    <div class="translation">Main tumse pyaar karti hoon 😽</div>
+  </div>
+
+  <button onclick="nextStep()">Next</button>
+
+  <script>
+    let currentStep = 1;
+    function nextStep() {
+      const current = document.getElementById(`step${currentStep}`);
+      const next = document.getElementById(`step${currentStep + 1}`);
+      if (next) {
+        current.classList.remove('active');
+        next.classList.add('active');
+        currentStep++;
+      }
+    }
   </script>
+
 </body>
 </html>
