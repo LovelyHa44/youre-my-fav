@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love You 🐻</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="container">
+    <!-- Scene 1 -->
+    <div class="scene">
+      <img src="bear1.gif" alt="Bear 1">
+      <p>Open this, okay? 😆</p>
+    </div>
+
+    <!-- Scene 2 -->
+    <div class="scene">
+      <img src="bear2.gif" alt="Bear 2">
+      <p>Playing a Game</p>
+    </div>
+
+    <!-- Scene 3 -->
+    <div class="scene">
+      <img src="bear3.gif" alt="Bear 3">
+      <p>Sitting in the Living Room,</p>
+    </div>
+
+    <!-- Scene 4 -->
+    <div class="scene">
+      <img src="bear4.gif" alt="Bear 4">
+      <p>I Really Like Playing Games,</p>
+    </div>
+
+    <!-- Scene 5 -->
+    <div class="scene">
+      <img src="bear5.gif" alt="Bear 5">
+      <p>But What I Like the Most…</p>
+    </div>
+
+    <!-- Scene 6 -->
+    <div class="scene">
+      <img src="bear6.gif" alt="Bear 6">
+      <p>Is You 😝😊💕<br><span class="small">Ahahaha~ 🤭</span></p>
+    </div>
+
+    <!-- Scene 7 -->
+    <div class="scene">
+      <img src="bear7.gif" alt="Bear 7">
+      <p>I Love You 😽</p>
+    </div>
+  </div>
+
+  <script>
+    const scenes = document.querySelectorAll('.scene');
+    let index = 0;
+
+    function showNextScene() {
+      if (index < scenes.length) {
+        scenes[index].classList.add('visible');
+        index++;
+        setTimeout(showNextScene, 2500); // 2.5 seconds between scenes
+      }
+    }
+
+    showNextScene();
+  </script>
+</body>
+</html>
